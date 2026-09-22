@@ -20,7 +20,7 @@
   },
   "license": "MIT",
   "author": "Yakau Verameyeu",
-  "type": "module",
+  "type": "commonjs",
   "main": "core/main/default/classes/TriggerHandler.cls",
   "scripts": {
     "lint": "eslint **/{aura,lwc}/**/*.js",
