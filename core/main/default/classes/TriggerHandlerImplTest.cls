@@ -1,4 +1,4 @@
-public with sharing class TriggerHandlerImplTest extends TriggerHandler {
+public without sharing class TriggerHandlerImplTest extends TriggerHandler {
     public Integer beforeInsertCallTimes = 0;
     public Integer afterInsertCallTimes = 0;
     public Integer beforeUpdateCallTimes = 0;
@@ -16,30 +16,30 @@ public with sharing class TriggerHandlerImplTest extends TriggerHandler {
 
     public Boolean isCustomDisabled = false;
 
-    public TestTriggerHandler(String identifier) {
+    public TriggerHandlerImplTest(String identifier) {
         this.handlerIdentifier = identifier;
     }
 
-    public TestTriggerHandler() {
+    public TriggerHandlerImplTest() {
         this(null);
     }
 
-    protected override Boolean isDisabled() {
+    public override Boolean isDisabled() {
         return isCustomDisabled;
     }
 
-    protected override void onBeforeInsert(List<SObject> newList) {
+    public override void onBeforeInsert(List<SObject> newList) {
         this.beforeInsertCallTimes++;
         this.capturedNewList = newList;
     }
 
-    protected override void onAfterInsert(List<SObject> newList, Map<Id, SObject> newMap) {
+    public override void onAfterInsert(List<SObject> newList, Map<Id, SObject> newMap) {
         this.afterInsertCallTimes++;
         this.capturedNewList = newList;
         this.capturedNewMap = newMap;
     }
 
-    protected override void onBeforeUpdate(
+    public override void onBeforeUpdate(
         List<SObject> newList,
         Map<Id, SObject> newMap,
         List<SObject> oldList,
@@ -52,7 +52,7 @@ public with sharing class TriggerHandlerImplTest extends TriggerHandler {
         this.capturedOldMap = oldMap;
     }
 
-    protected override void onAfterUpdate(
+    public override void onAfterUpdate(
         List<SObject> newList,
         Map<Id, SObject> newMap,
         List<SObject> oldList,
@@ -65,25 +65,25 @@ public with sharing class TriggerHandlerImplTest extends TriggerHandler {
         this.capturedOldMap = oldMap;
     }
 
-    protected override void onBeforeDelete(List<SObject> oldList, Map<Id, SObject> oldMap) {
+    public override void onBeforeDelete(List<SObject> oldList, Map<Id, SObject> oldMap) {
         this.beforeDeleteCallTimes++;
         this.capturedOldList = oldList;
         this.capturedOldMap = oldMap;
     }
 
-    protected override void onAfterDelete(List<SObject> oldList, Map<Id, SObject> oldMap) {
+    public override void onAfterDelete(List<SObject> oldList, Map<Id, SObject> oldMap) {
         this.afterDeleteCallTimes++;
         this.capturedOldList = oldList;
         this.capturedOldMap = oldMap;
     }
 
-    protected override void onAfterUndelete(List<SObject> newList, Map<Id, SObject> newMap) {
+    public override void onAfterUndelete(List<SObject> newList, Map<Id, SObject> newMap) {
         this.afterUndeleteCallTimes++;
         this.capturedNewList = newList;
         this.capturedNewMap = newMap;
     }
 
-    protected override Object getIdentifier() {
+    public override Object getIdentifier() {
         return this.handlerIdentifier;
     }
 }
