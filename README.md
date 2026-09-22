@@ -100,7 +100,7 @@ TriggerHandler.disableByIdentifier('AccountTriggerHandler');
 TriggerHandler.enableByIdentifier('AccountTriggerHandler');
 ```
 
-In general identifiers could repeat, in this case all handlers with matching
+In general identifiers could repeat, in this case all handlers with matching identifier marked as disable will be bypassed.
 
 ## Roadmap
 
