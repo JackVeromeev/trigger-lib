@@ -1,4 +1,6 @@
- # Trigger Library
+# Trigger Library
+
+[![codecov](https://codecov.io/gh/JackVeromeev/trigger-lib/graph/badge.svg?token=QU6VT0TKCD)](https://codecov.io/gh/JackVeromeev/trigger-lib)
 
 Inspired by existing Trigger Handler frameworks, built from scratch to meet my own design goals.
 
