@@ -1,0 +1,12 @@
+{
+  "packageDirectories": [
+    {
+      "path": "core",
+      "default": true
+    }
+  ],
+  "name": "trigger-lib",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "67.0"
+}
